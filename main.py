@@ -7,7 +7,7 @@ visina = 400
 boja_pozadine = (255, 255, 255)
 olovka = (0, 0, 0)
 lista_tocaka= []
-broj_tocaka = 8
+broj_tocaka = 7
 
 centar = 200
 promjer = 100
