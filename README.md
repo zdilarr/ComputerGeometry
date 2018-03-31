@@ -1,8 +1,4 @@
-# Kompjuterska_geometrija
-Algoritam za pronalaženje svih mogućih triangulacija
+Algorithm for finding all possible triangulation of a symple polygon.
+Resulting images in the Output_folder.
 
--triangulacije su u Output_folder (ocistiti folder prije ponovnog pozivanja radi preglednosti)
-
-- importovati bazu pa odkomentirati funkciju za spremanje u main.py
-
--Detaljnije u dokumentaciji
+Project is documented, please check the .pdf file
