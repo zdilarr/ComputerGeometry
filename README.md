@@ -17,7 +17,8 @@ Getting Started:
 - Download and open project
 - Create and activate virtual environment, as per your preference.
 - pip install -r requirements.txt
-- Open MySQL and create database schema by running CREATE DATABASE triangulacije; 
+- Open MySQL and create database schema triangulation;
+- Import triangulation.sql
 - Navigate to project root folder
 - python main.py
 
