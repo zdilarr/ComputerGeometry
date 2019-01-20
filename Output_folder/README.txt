@@ -1,1 +1,0 @@
-Direktorij za izlazne slike.
