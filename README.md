@@ -19,6 +19,7 @@ Getting Started:
 - pip install -r requirements.txt
 - Open MySQL and create database schema triangulation;
 - Import triangulation.sql
+- set username and password in utils/constants.py
 - Navigate to project root folder
 - python main.py
 
