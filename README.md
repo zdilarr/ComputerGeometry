@@ -34,7 +34,7 @@ Tips:
  
  Example of the decagon triangulations: 
   
-<img src="n=10.gif" width="300">
+<img src="results/n=10.gif" width="300">
 
 **********************************************************************
 
