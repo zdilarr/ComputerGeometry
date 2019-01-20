@@ -1,41 +1,29 @@
-from Triangulacije import *
-from Tocka import Tocka
+"""
+Contains method call for generating and
+saving all triangulations.
+Author: Emilija Zdilar 24-01-2018
+"""
+from triangulations import *
+from point import Point
 import math
+from utils.constants import NO_OF_POINTS, CENTER, DIAMETER, WIDTH, HEIGHT, BG_COLOR, PEN
 
-sirina = 400
-visina = 400
-boja_pozadine = (255, 255, 255)
-olovka = (0, 0, 0)
-lista_tocaka= []
-broj_tocaka = 7
+list_of_points = []
 
-centar = 200
-promjer = 100
-
-for i in range(broj_tocaka):
-    lista_tocaka.append(
-        Tocka(
-            centar + promjer*math.cos((2*math.pi*i)/broj_tocaka),
-            centar + promjer*math.sin((2*math.pi*i)/broj_tocaka)
+for i in range(NO_OF_POINTS):
+    list_of_points.append(
+        Point(
+            CENTER + DIAMETER * math.cos((2 * math.pi * i) / NO_OF_POINTS),
+            CENTER + DIAMETER * math.sin((2 * math.pi * i) / NO_OF_POINTS)
         )
     )
 
 
+all_possible_triangulations(list_of_points)
+save_triangulations(list_of_points, Structs.list_of_triangulations, WIDTH, HEIGHT, BG_COLOR, PEN)
+save_to_database(list_of_points, Structs.list_of_triangulations)
 
-Sve_moguce_triangulacije(lista_tocaka)
-"""
-Rezultat provjeriti u output folderu
-"""
-SpremiTriangulacije(lista_tocaka, Strukture.lista_triangulacija, sirina, visina, boja_pozadine, olovka)
-"""
-Odkomentirati  sljedecu funkciju nakon što je baza kreirana:
 
-Spremi_u_bazu(lista_tocaka, Strukture.lista_triangulacija)
-"""
-
-def main():
-
+def main()-> None:
     if __name__ == "__main__":
         main()
-
-

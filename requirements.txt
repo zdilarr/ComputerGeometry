@@ -1,0 +1,4 @@
+mysql-connector==2.1.6
+peewee==3.8.2
+Pillow==5.4.1
+PyMySQL==0.9.3

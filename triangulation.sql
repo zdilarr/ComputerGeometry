@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.6.34, for Win64 (x86_64)
 --
--- Host: localhost    Database: Triangulacije
+-- Host: localhost    Database: triangulation
 -- ------------------------------------------------------
 -- Server version	5.5.5-10.1.21-MariaDB
 
@@ -16,80 +16,80 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `dijagonala`
+-- Table structure for table `diagonal`
 --
 
-DROP TABLE IF EXISTS `dijagonala`;
+DROP TABLE IF EXISTS `diagonal`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dijagonala` (
-  `ID_Dijagonale` int(11) NOT NULL,
-  `ID_Triangulacije` int(11) DEFAULT NULL,
-  `ID_Pocetne_Tocke` int(11) DEFAULT NULL,
-  `ID_Krajnje_Tocke` int(11) DEFAULT NULL,
-  PRIMARY KEY (`ID_Dijagonale`),
-  KEY `ID_Pocetne_Tocke_idx` (`ID_Pocetne_Tocke`),
-  KEY `ID_Krajnje_Tocke_idx` (`ID_Krajnje_Tocke`),
-  KEY `ID_Triangulacije` (`ID_Triangulacije`),
-  CONSTRAINT `ID_Krajnje_Tocke` FOREIGN KEY (`ID_Krajnje_Tocke`) REFERENCES `tocka` (`ID_Tocke`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `ID_Pocetne_Tocke` FOREIGN KEY (`ID_Pocetne_Tocke`) REFERENCES `tocka` (`ID_Tocke`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `ID_Triangulacije` FOREIGN KEY (`ID_Triangulacije`) REFERENCES `triangulacija` (`ID_Triangulacije`) ON DELETE NO ACTION ON UPDATE NO ACTION
+CREATE TABLE `diagonal` (
+  `diagonal_id` int(11) NOT NULL,
+  `triangulation_id` int(11) DEFAULT NULL,
+  `starting_point_id` int(11) DEFAULT NULL,
+  `ending_point_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`diagonal_id`),
+  KEY `starting_point_id_idx` (`starting_point_id`),
+  KEY `ending_point_id_idx` (`ending_point_id`),
+  KEY `triangulation_id` (`triangulation_id`),
+  CONSTRAINT `ending_point_id` FOREIGN KEY (`ending_point_id`) REFERENCES `point` (point_id) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `starting_point_id` FOREIGN KEY (`starting_point_id`) REFERENCES `point` (point_id) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `triangulation_id` FOREIGN KEY (`triangulation_id`) REFERENCES `triangulation` (`triangulation_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `dijagonala`
+-- Dumping data for table `diagonal`
 --
 
-LOCK TABLES `dijagonala` WRITE;
-/*!40000 ALTER TABLE `dijagonala` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dijagonala` ENABLE KEYS */;
+LOCK TABLES `diagonal` WRITE;
+/*!40000 ALTER TABLE `diagonal` DISABLE KEYS */;
+/*!40000 ALTER TABLE `diagonal` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `tocka`
+-- Table structure for table `point`
 --
 
-DROP TABLE IF EXISTS `tocka`;
+DROP TABLE IF EXISTS `point`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `tocka` (
-  `ID_Tocke` int(11) NOT NULL,
-  `x_koordinata` double DEFAULT NULL,
-  `y_koordinata` double DEFAULT NULL,
-  PRIMARY KEY (`ID_Tocke`)
+CREATE TABLE `point` (
+  point_id int(11) NOT NULL,
+  `x_coordinate` double DEFAULT NULL,
+  `y_coordinate` double DEFAULT NULL,
+  PRIMARY KEY (point_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `tocka`
+-- Dumping data for table `point`
 --
 
-LOCK TABLES `tocka` WRITE;
-/*!40000 ALTER TABLE `tocka` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tocka` ENABLE KEYS */;
+LOCK TABLES `point` WRITE;
+/*!40000 ALTER TABLE `point` DISABLE KEYS */;
+/*!40000 ALTER TABLE `point` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `triangulacija`
+-- Table structure for table `triangulation`
 --
 
-DROP TABLE IF EXISTS `triangulacija`;
+DROP TABLE IF EXISTS `triangulation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `triangulacija` (
-  `ID_Triangulacije` int(11) NOT NULL,
-  PRIMARY KEY (`ID_Triangulacije`)
+CREATE TABLE `triangulation` (
+  `triangulation_id` int(11) NOT NULL,
+  PRIMARY KEY (`triangulation_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `triangulacija`
+-- Dumping data for table `triangulation`
 --
 
-LOCK TABLES `triangulacija` WRITE;
-/*!40000 ALTER TABLE `triangulacija` DISABLE KEYS */;
-/*!40000 ALTER TABLE `triangulacija` ENABLE KEYS */;
+LOCK TABLES `triangulation` WRITE;
+/*!40000 ALTER TABLE `triangulation` DISABLE KEYS */;
+/*!40000 ALTER TABLE `triangulation` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
