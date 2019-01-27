@@ -26,9 +26,9 @@ Getting Started:
 **********************************************************************
 
 Tips:
-- The number of possible triangulations for a n-sided simple polygon
-  is given by Catalan number C<sub>n-2</sub>. Hence, the algorithm
-  finishes in a reasonable amount of time for small inputs.
+- The number of possible triangulations for a n-sided simple polygon <br>
+  is given by Catalan number C<sub>n-2</sub>.  Hence, the algorithm finishes in a <br>
+  reasonable amount of time for small inputs.
 - In-depth explanation is found in .pdf file
   
  
